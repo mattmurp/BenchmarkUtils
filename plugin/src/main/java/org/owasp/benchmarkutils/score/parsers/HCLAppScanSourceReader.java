@@ -104,12 +104,14 @@ public class HCLAppScanSourceReader extends Reader {
             if (tn <= 0) {
                 reportWarning("TestCase Number is bad for file: " + filename);
             }
-            TestCaseResult tcr = new TestCaseResult();
-            tcr.setNumber(tn);
-            tcr.setCategory(issueType); // TODO: Is this right?
-            tcr.setCWE(vtype);
-            tcr.setEvidence(issueType);
-            tr.put(tcr);
+            else {
+	            TestCaseResult tcr = new TestCaseResult();
+	            tcr.setNumber(tn);
+	            tcr.setCategory(issueType); // TODO: Is this right?
+	            tcr.setCWE(vtype);
+	            tcr.setEvidence(issueType);
+	            tr.put(tcr);
+            }
         }
 
         return tr;
